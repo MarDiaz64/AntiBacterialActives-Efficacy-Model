@@ -2,7 +2,7 @@ import pandas as pd
 import sqlite3
 class DBManager:
     @classmethod
-    def insert(cls,actives,dilution,hardness,dirty,ph,efficacy,idd):
+    def insert(cls,actives,dilution,hardness,dirty,ph,efficacy,idd): 
         conn = sqlite3.connect('LocalSQL.db')
         cursor = conn.cursor()
         cursor.execute("""INSERT INTO data
