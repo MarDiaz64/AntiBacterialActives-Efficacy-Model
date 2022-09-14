@@ -7,7 +7,7 @@ import tkinter as tk
 from Model import Model
 model = Model()
 
-#active arrays:
+#active arrays: (how actives are modeled here may be subject to change, right now only 3 actives are concidered)
 activeValue=[0,0,0]
 
 def set_text(text):
@@ -44,11 +44,11 @@ def clicked(event):  #Click event callback function.
     if parent==leftFrame: #select the row data
         select_value()
 
-def enter(event):
+def enter(event): #Enter event callback function
     if addName.get()!='':
         update_active()
     
-def update_active():
+def update_active(): #updates values of the actives
     selected=actives.focus()
     #save new data 
     actives.item(selected,text="",values=(addName.get(),addValue.get()))
@@ -80,7 +80,7 @@ root.bind('<ButtonRelease-1>', clicked)
 root.bind('<Return>',enter)
 
 leftFrame = ttk.Frame(content,width=50, height=100)
-#v = Scrollbar(leftFrame)
+#v = Scrollbar(leftFrame), scroll bar will be updated later
 #v.config(command=leftFrame.yview)
 #v.pack(side=RIGHT,fill=X)
 
