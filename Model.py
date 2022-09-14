@@ -9,7 +9,8 @@ class Model:
         self.cleanedData=DBManager.getCleanedData()
         #load model
         try:
-            self.model = pickle.load(open('efficacyModel.sav', 'rb')) #pickle used to save model for reuse
+            #pickle used to save model for reuse (see more in train())
+            self.model = pickle.load(open('efficacyModel.sav', 'rb')) 
         except FileNotFoundError:
             self.model = LinearRegression()
             self.train()
